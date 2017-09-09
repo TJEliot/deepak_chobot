@@ -30,19 +30,6 @@ def fetchdata(url):
     length = len(data) - 3
     data = data[1:length]
     print(data)
-#    while True:
-#        if isintance(tag, bs4.element.Tag):
-    #        if (tag.name == 'h2'):
-    #            data = data + '\n' + tag.text
-            #    break
-        #        tag = tag.nextSibling
-#            if (tag.name == 'h3'):
-#                break
-#            else:
-#                data = data + '\n' + tag.text
-#                tag = tag.nextSibling
-#        else:
-#            tag = tag.nextSibling
     return data
 
 def run_chobot(reddit):
