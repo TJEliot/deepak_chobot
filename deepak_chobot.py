@@ -16,7 +16,7 @@ path = '/home/thomas/Documents/deepak_chobot/commented.txt'
 
 def authenticate():
     print('Authenticating...\n')
-    reddit = praw.Reddit(client_id='hNjqvmwFwdlc_A', client_secret='kpZ3Xb512WMgtiCG3aetBUnqVv0', user_agent='deepak chopra', username='Deepak_Chopra', password='bg4350p')
+    reddit = praw.Reddit(client_id='hNjqvmwFwdlc_A', client_secret='kpZ3Xb512WMgtiCG3aetBUnqVv0', user_agent='deepak chopra', username='Deepak_Chopra', password='soundsdeepman')
     print('Authenticated as {}\n'.format(reddit.user.me()))
     return reddit
 
@@ -24,19 +24,25 @@ def fetchdata(url):
     r = requests.get(url)
     soup = BeautifulSoup(r.content, 'html.parser')
 
-    tag = soup.find('p')
+    tag = soup.find('h2')
     data = ''
-    while True:
-        if isintance(tag, bs4.element.Tag):
-            if (tag.name == 'h3'):
-                break
-            if (tag.name == 'h2'):
-                tag = tag.nextSibling
-            else:
-                data = data + '\n' + tag.text
-                tag = tag.nextSibling
-        else:
-            tag = tag.nextSibling
+    data = tag.text
+    length = len(data) - 3
+    data = data[1:length]
+    print(data)
+#    while True:
+#        if isintance(tag, bs4.element.Tag):
+    #        if (tag.name == 'h2'):
+    #            data = data + '\n' + tag.text
+            #    break
+        #        tag = tag.nextSibling
+#            if (tag.name == 'h3'):
+#                break
+#            else:
+#                data = data + '\n' + tag.text
+#                tag = tag.nextSibling
+#        else:
+#            tag = tag.nextSibling
     return data
 
 def run_chobot(reddit):
@@ -52,8 +58,8 @@ def run_chobot(reddit):
 
             try:
                 print("trying to scrape")
-#                explanation=fetchdata(myurl)
-                explanation = "test"
+                explanation=fetchdata(myurl)
+#                explanation = "test"
             except:
                 print("Exception!! possibly fucked up url")
                 break
