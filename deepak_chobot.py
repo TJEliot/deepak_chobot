@@ -10,9 +10,8 @@ import time
 import re
 import requests
 import bs4
-
-
-path = '/home/thomas/Documents/deepak_chobot/commented.txt'
+import os 
+path = os.path.dirname(os.path.realpath(__file__))
 
 def authenticate():
     print('Authenticating...\n')
