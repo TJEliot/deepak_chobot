@@ -11,7 +11,7 @@ import re
 import requests
 import bs4
 import os 
-path = os.path.dirname(os.path.realpath(__file__))
+path = '/deepak_chobot/commented.txt'
 
 def authenticate():
     print('Authenticating...\n')
