@@ -11,7 +11,7 @@ import re
 import requests
 import bs4
 import os 
-path = '~/deepak_chobot/commented.txt'
+path = 'home/pi/deepak_chobot/commented.txt'
 
 def authenticate():
     print('Authenticating...\n')
