@@ -35,7 +35,7 @@ def run_chobot(reddit):
     print("Getting 250 comments...\n")
 
     for comment in reddit.subreddit('atheism').comments(limit=250):
-        match = re.findall(r"(?i)[a-z]*[A-Z]*[0-9]*quantum|(?i)[a-z]*[A-Z]*[0-9]*chopra|(?i)[a-z]*[A-Z]*[0-9]*mystic|(?i)[a-z]*[A-Z]*[0-9]*bullshit", comment.body)
+        match = re.findall(r"(?i)[a-z]*[A-Z]*[0-9]*quantum|(?i)[a-z]*[A-Z]*[0-9]*chopra|(?i)[a-z]*[A-Z]*[0-9]*mystic|(?i)[a-z]*[A-Z]*[0-9]*magic", comment.body)
         if match:
             print("Deepak was mentioned in comment ID:" + comment.id)
             myurl='http://wisdomofchopra.com/iframe.php'
